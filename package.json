@@ -1,0 +1,27 @@
+{
+  "name": "helpdesk2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "forever server.js",
+    "watch": "forever -w server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiselevgleb/HelpDesk2.git"
+  },
+  "author": "GK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiselevgleb/HelpDesk2/issues"
+  },
+  "homepage": "https://github.com/kiselevgleb/HelpDesk2#readme",
+  "dependencies": {
+    "forever": "^3.0.0",
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "uuid": "^8.2.0"
+  }
+}
