@@ -19,7 +19,7 @@ export default class Ticket {
   //         console.log(response.user);
   //         User.setCurrent(response.user);
   //         console.log(this.current());
-  //       } 
+  //       }
   //       callback(err, response);
   //     }
   //   });
@@ -38,7 +38,7 @@ export default class Ticket {
   //         console.log(response.user);
   //         User.setCurrent(response.user);
   //         console.log(this.current());
-  //       } 
+  //       }
   //       callback(err, response);
   //     }
   //   });
@@ -57,7 +57,7 @@ export default class Ticket {
   //         console.log(response.user);
   //         User.setCurrent(response.user);
   //         console.log(this.current());
-  //       } 
+  //       }
   //       callback(err, response);
   //     }
   //   });
