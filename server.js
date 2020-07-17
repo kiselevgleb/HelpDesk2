@@ -4,15 +4,17 @@ const koaBody = require('koa-body');
 const app = new Koa();
 
 const ticketsAll = [{
-  "id": "123",
-  "name": "дддд",
+  "id": 123,
+  "name": "test test test test test test",
+  "dis": "test+ test+ test+",
   "status": "TODO",
-  "created": "111"
+  "created": "2020-07-17 13:33"
 }, {
-  "id": "234",
-  "name": "дддд",
+  "id": 234,
+  "name": "test2 test test test test test",
+  "dis": "test+ test+ test+",
   "status": "TODO",
-  "created": "111"
+  "created": "2020-07-17 13:32"
 }];
 
 app.use(koaBody({
@@ -23,10 +25,13 @@ app.use(async ctx => {
   const {
     method
   } = ctx.request.query;
+  ctx.response.set({
+    'Access-Control-Allow-Origin': '*',
+  });
+  console.log(ticketsAll);
   switch (method) {
     case 'allTickets':
       ctx.response.body = ticketsAll;
-      console.log(ticketsAll);
       return;
     case 'ticketById':
       const {
@@ -35,24 +40,36 @@ app.use(async ctx => {
       const result = ticketsAll.filter(tic => tic.id == id);
       ctx.response.body = result;
       return;
+    case 'delById':
+      let js = JSON.parse(ctx.request.body);
+      const resultDel = ticketsAll.filter(tic => tic.id.toString() === js.num);
+      const num = ticketsAll.indexOf(resultDel[0]);
+      ticketsAll.splice(num, 1);
+      ctx.response.body = ticketsAll;
+      return;
     case 'createTicket':
-      console.log(ctx.request.body);
-      const repeat = ticketsAll.filter(tic => tic.name == ctx.request.body.name);
+      let j = JSON.parse(ctx.request.body);
+      const repeat = ticketsAll.filter(tic => tic.name == j.name);
       let numId = ticketsAll.length;
       let numEr = ticketsAll.filter(tic => tic.id == numId);
 
-      while (numEr.length!=0) {
+      while (numEr.length != 0) {
         numId++;
         numEr = ticketsAll.filter(tic => tic.id == numId);
       };
-      if(repeat.length==0){
-        ticketsAll.push({"id": numId, "name": `${ctx.request.body.name}`, "status": `${ctx.request.body.status}`, "created": `${ctx.request.body.created}`});
+      if (repeat.length == 0) {
+        ticketsAll.push({
+          "id": numId,
+          "name": `${j.name}`,
+          "dis": `${j.dis}`,
+          "status": `${j.status}`,
+          "created": `${j.created}`
+        });
       }
       ctx.response.body = ticketsAll;
       return;
     default:
-      ctx.response.body = "<div><form method='POST' action='/?method=createTicket'><input data-id='name' name='name' required><input data-id='status' name='status' required> <input data-id='created' name='created' required><button>Записаться</button></form></div>";
-      console.log(ctx.response);
+      ctx.response.status = 404;
       return;
   }
 });
