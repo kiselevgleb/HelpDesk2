@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "startWeb": "webpack-dev-server --mode development",
-    "start2": "node server.js",
+    "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 0",
@@ -13,11 +12,7 @@
     "show:coverage": "live-server coverage/lcov-report",
     "preshow:dist": "npm run build",
     "show:dist": "live-server dist",
-    "prestart": "npm install", 
-    "start": "forever server.js", 
-    "watch": "forever -w server.js"
   },
-  "engines": { "node": "11.x" },
   "author": "GK",
   "license": "MIT",
   "devDependencies": {

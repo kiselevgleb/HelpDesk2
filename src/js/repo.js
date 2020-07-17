@@ -7,7 +7,7 @@ export {
 
 function allTickets() {
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://localhost:7070/?method=allTickets', false);
+  xhr.open('GET', 'https://kiselevgleb.github.io/HelpDesk-backEnd/?method=allTickets', false);
   xhr.send();
   if (xhr.status !== 200) {
     alert(`${xhr.status}: ${xhr.statusText}`);
@@ -16,7 +16,7 @@ function allTickets() {
   }
 }
 function ticketById(id) {
-  const url = `http://localhost:7070/?method=ticketById&id=${id}`;
+  const url = `https://kiselevgleb.github.io/HelpDesk-backEnd/?method=ticketById&id=${id}`;
   const xhr = new XMLHttpRequest();
   xhr.open('GET', url, false);
   xhr.send();
@@ -27,7 +27,7 @@ function ticketById(id) {
   }
 }
 function delById(form) {
-  const url = 'http://localhost:7070/?method=delById';
+  const url = 'https://kiselevgleb.github.io/HelpDesk-backEnd/?method=delById';
   const xhr = new XMLHttpRequest();
   xhr.open('POST', url, false);
   xhr.send(form);
@@ -38,7 +38,7 @@ function delById(form) {
   }
 }
 function createTicket(formData) {
-  const url = 'http://localhost:7070/?method=createTicket';
+  const url = 'https://kiselevgleb.github.io/HelpDesk-backEnd/?method=createTicket';
   const xhr = new XMLHttpRequest();
   xhr.open('POST', url, false);
   xhr.send(formData);
