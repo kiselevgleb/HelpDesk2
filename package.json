@@ -1,13 +1,14 @@
 {
-  "name": "HelpDesk",
+  "name": "CRM",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "coverage": "jest --coverage",
+    "test": "jest --testPathPattern=./src/", 
+    "coverage": "jest --testPathPattern=./src/ --coverage", 
+    "e2e": "jest --testPathPattern=./e2e/",
     "preshow:coverage": "npm run coverage",
     "show:coverage": "live-server coverage/lcov-report",
     "preshow:dist": "npm run build",
@@ -37,20 +38,15 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "forever": "^3.0.0",
-    "koa": "^2.13.0",
-    "koa-body": "^4.2.0",
-    "strip-json-comments": "^3.1.1",
-    "uuid": "^8.2.0"
+    "core-js": "^3.6.5"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kiselevgleb/HelpDesk2.git"
+    "url": "git+https://github.com/kiselevgleb/CRM-template.git"
   },
   "bugs": {
-    "url": "https://github.com/kiselevgleb/HelpDesk2/issues"
+    "url": "https://github.com/kiselevgleb/CRM-template/issues"
   },
-  "homepage": "https://github.com/kiselevgleb/HelpDesk2#readme",
+  "homepage": "https://github.com/kiselevgleb/CRM-template#readme",
   "description": ""
 }
