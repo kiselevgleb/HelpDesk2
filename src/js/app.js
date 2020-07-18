@@ -12,8 +12,11 @@ const butPlus = document.getElementById('Plus');
 const butSave = document.getElementById('butSave');
 const butClose = document.getElementById('butClose');
 
+try {
+  let data = JSON.parse(allTickets());
+} catch (error) {
 
-let data = JSON.parse(allTickets());
+}
 let coin;
 let coinPlus = true;
 
@@ -97,7 +100,11 @@ function del(but) {
       num: e.target.getAttribute('num'),
     });
     delById(J);
-    data = JSON.parse(allTickets());
+    try {
+      data = JSON.parse(allTickets());
+    } catch (error) {
+
+    }
     add(data);
   });
 }
@@ -140,7 +147,11 @@ function save() {
         created: date,
       });
       createTicket(J);
-      data = JSON.parse(allTickets());
+      try {
+        data = JSON.parse(allTickets());
+      } catch (error) {
+
+      }
       divEdit.style.display = 'none';
       add(data);
     } else {
@@ -156,8 +167,11 @@ function save() {
         created: date,
       });
       createTicket(J);
+      try {
+        data = JSON.parse(allTickets());
+      } catch (error) {
 
-      data = JSON.parse(allTickets());
+      }
       divEdit.style.display = 'none';
       add(data);
     }
