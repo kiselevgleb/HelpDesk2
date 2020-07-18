@@ -1,7 +1,6 @@
 # HelpDesk
 
 https://kiselevgleb.github.io/HelpDesk2/
-[![Build status](https://ci.appveyor.com/api/projects/status/5g6ywsqa9y58b3p8?svg=true)](https://ci.appveyor.com/project/kiselevgleb/helpdesk2)
 
 Back server https://help-desk-backend2.herokuapp.com/
 example reguest: https://help-desk-backend2.herokuapp.com/?method=allTickets
