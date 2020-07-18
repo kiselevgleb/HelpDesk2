@@ -41,6 +41,7 @@
     "forever": "^3.0.0",
     "koa": "^2.13.0",
     "koa-body": "^4.2.0",
+    "strip-json-comments": "^3.1.1",
     "uuid": "^8.2.0"
   },
   "repository": {
